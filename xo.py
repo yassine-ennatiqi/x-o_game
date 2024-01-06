@@ -4,6 +4,7 @@ def printForm():
             print(list1[i][j] , end="  ")
             print("|" , end="  ")
         print("\n================")
+
 def valide():
     for i in range(3):
         for j in range(3):
@@ -11,12 +12,7 @@ def valide():
                 return False
     return True
 
-
-
-
 list1=[]
-
-
 
 for i in range(3):
     list2=[]
@@ -24,20 +20,51 @@ for i in range(3):
         list2.append("?")
     list1.append(list2)
 
-while True :
+for m in range(9):
     printForm()
-
-    lign = (input("entrer le numero de lign: "))
-    while lign not in ["1","2","3"]:
+    if m % 2 == 0:
         lign = (input("entrer le numero de lign: "))
-    col = (input("entrer le numero de colon: "))
-    while col not in ["1","2","3"]:
+        while lign not in ["1","2","3"]:
+            lign = (input("entrer le numero de lign: "))
         col = (input("entrer le numero de colon: "))
-    form = input("entrer la form: ")
-    while form not in ["x","o"]:
-        form = input("entrer la form: ")
-    lign = int(lign)
-    col = int (col)
+        while col not in ["1","2","3"]:
+            col = (input("entrer le numero de colon: "))
+        form = "x"
+        lign = int(lign)
+        col = int (col)
+        while list1[lign-1][col-1] != "?":
+            print("plain")
+            lign = (input("entrer le numero de lign: "))
+            while lign not in ["1","2","3"]:
+                lign = (input("entrer le numero de lign: "))
+            col = (input("entrer le numero de colon: "))
+            while col not in ["1","2","3"]:
+                col = (input("entrer le numero de colon: "))
+            form = "x"
+            lign = int(lign)
+            col = int (col)
+    else :
+        lign = (input("entrer le numero de lign: "))
+        while lign not in ["1","2","3"]:
+            lign = (input("entrer le numero de lign: "))
+        col = (input("entrer le numero de colon: "))
+        while col not in ["1","2","3"]:
+            col = (input("entrer le numero de colon: "))
+        form = "o"
+        lign = int(lign)
+        col = int (col)
+        while list1[lign-1][col-1] != "?":
+            print("plain")
+            lign = (input("entrer le numero de lign: "))
+            
+            while lign not in ["1","2","3"]:
+                lign = (input("entrer le numero de lign: "))
+            col = (input("entrer le numero de colon: "))
+            while col not in ["1","2","3"]:
+                col = (input("entrer le numero de colon: "))
+            form = "o"
+            lign = int(lign)
+            col = int (col)
     list1[lign-1][col-1] = form
     for i in range(3):
         for j in range(3):
